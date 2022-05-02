@@ -1,0 +1,25 @@
+.form-title{
+    color: #00204C ;
+    font-size: 30px;
+}
+.login-container input{
+    display: block;
+    width: 50%;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+
+.reset{
+    color: red;
+    cursor: pointer;
+}
+.form-button{
+    border: none;
+    background-color: #00204C;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+
+}

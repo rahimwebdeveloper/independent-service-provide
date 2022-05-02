@@ -1,0 +1,23 @@
+.service-container{
+    background-color: #00204C;
+    padding: 30px;
+    color: white;
+}
+.service-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    
+}
+.service-section div {
+    background-color: white;
+    color: #00204C;
+    padding: 20px;
+}
+.service-section div a{
+    text-decoration: none;
+    background-color: #00204C;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
