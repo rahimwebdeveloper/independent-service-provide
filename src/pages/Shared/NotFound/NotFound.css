@@ -1,0 +1,10 @@
+.not-found{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+.not-found h2{
+    color: red;
+    font-weight: 700;
+}
