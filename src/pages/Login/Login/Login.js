@@ -10,7 +10,9 @@ const Login = () =>{
     const [errorMassage, setErrorMassage] = useState('');
     const emailRef = useRef();
     const passwordRef = useRef();
+    const location = useNavigate();
     const navigate = useNavigate();
+    let from = location.state?.from?.pathname || "/";
 
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending, error1 ] = useSendPasswordResetEmail(auth);
@@ -31,7 +33,7 @@ const Login = () =>{
 
    
     if (user) {
-        navigate("/home")
+        navigate(from, {replace : true})
     }
     
     if (sending) {
