@@ -1,0 +1,36 @@
+.img-container img {
+    height: 150px;
+    width: 140px;
+    border-radius: 50%;
+    border: 5px solid rgba(128, 128, 128, 0.582);
+}
+
+.info-container {
+    display: flex;
+    justify-content:space-between;
+    margin-top: 20px;
+}
+
+.info-area {
+    width: 45%;
+}
+
+.skill-area {
+    width: 45%;
+
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.skills div{
+    margin: 10px;
+    background-color: rgb(209, 204, 204);
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #00204C;
+    font-weight: 700;
+}
