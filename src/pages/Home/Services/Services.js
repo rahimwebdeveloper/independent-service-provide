@@ -9,17 +9,18 @@ const Services = () => {
             <section className='service-section mt-5 mb-5'>
                 <div>
                     <h2>Real Estate Forms</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deserunt nemo, voluptas pariatur neque aut quae, consequuntur quisquam officia voluptatibus veritatis incidunt quod aperiam ut amet non a, eum vitae.</p>
+                    <p>Find Mi Real Estate! Always Facts. Privacy Friendly. The Best Resources. Unlimited Access. Results & Answers. Types: Best Results, Explore Now, New Sources, Best in Search.</p>
                     <Link to="/checkout">Check Out</Link>
                 </div>
                 <div>
                     <h2>Business Documents</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deserunt nemo, voluptas pariatur neque aut quae, consequuntur quisquam officia voluptatibus veritatis incidunt quod aperiam ut amet non a, eum vitae.</p>
+                    <p>Business documents are files of various types that record various details regarding an organization's internal and external dealings. They're usually essential for a company's management.</p>
                     <Link to="/checkout">Check Out</Link>
                 </div>
                 <div>
                     <h2>Family Documents</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deserunt nemo, voluptas pariatur neque aut quae, consequuntur quisquam officia voluptatibus veritatis incidunt quod aperiam ut amet non a, eum vitae.</p>
+                    <p>It is important to locate, list, and review your documentation so that, in the event of your disability or death, your agent will be able to administer your estate according
+                        to your wishes. </p>
                     <Link to="/checkout">Check Out</Link>
                 </div>
             </section>
