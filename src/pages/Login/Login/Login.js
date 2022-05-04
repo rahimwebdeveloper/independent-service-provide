@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Social from '../Social/Social';
 import './Login.css'
 import auth from '../../../firebase.init';
@@ -12,10 +12,13 @@ const Login = () =>{
     const passwordRef = useRef();
     const location = useNavigate();
     const navigate = useNavigate();
+
+    const [user, loading, error] = useAuthState(auth);
+
     let from = location.state?.from?.pathname || "/";
 
-    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail, sending, error1 ] = useSendPasswordResetEmail(auth);
+    const [signInWithEmailAndPassword ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const handleSign = event => {
         event.preventDefault();

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Social from '../Social/Social';
 import auth from '../../../firebase.init';
 
@@ -9,8 +9,8 @@ const Register = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const navigate = useNavigate();
-
-    const [createUserWithEmailAndPassword, user, loading, error] = 
+    const [user, loading, error] = useAuthState(auth);
+    const [createUserWithEmailAndPassword] = 
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true});
 
     const handleCreateUser = event => {
