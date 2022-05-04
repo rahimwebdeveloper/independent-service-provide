@@ -13,12 +13,10 @@ const Header = () => {
                         <img height="30" src={logo} alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
-                        </Nav>
-                        <Nav>
+                    <Navbar.Collapse className='d-lg-flex justify-content-end' id="responsive-navbar-nav">
+                        <Nav >
+                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
                             <Nav.Link as={Link} to="/about">About us</Nav.Link>
                             <Nav.Link as={Link} to="/login">
                                 Login

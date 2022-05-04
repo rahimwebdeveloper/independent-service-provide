@@ -1,0 +1,25 @@
+.footer-container {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+.logo-area{
+    display: flex;
+    justify-content: center;
+}
+.logo-area img {
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.text-area {
+    color: white;
+    text-align: center;
+}
+.text-area a{
+    text-decoration: none;
+    color: white;
+}
