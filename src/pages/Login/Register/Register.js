@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Social from '../Social/Social';
 import auth from '../../../firebase.init';
@@ -8,9 +8,10 @@ const Register = () => {
     const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
+    const navigate = useNavigate();
 
     const [createUserWithEmailAndPassword, user, loading, error] = 
-    useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true});
 
     const handleCreateUser = event => {
         event.preventDefault();
@@ -18,6 +19,10 @@ const Register = () => {
         const email = emailRef.current.value ;
         const password = passwordRef.current.value ;
         createUserWithEmailAndPassword(email, password);
+    }
+
+    if(user){
+        navigate("/home")
     }
 
     return (
