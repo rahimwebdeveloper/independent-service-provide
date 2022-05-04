@@ -4,17 +4,16 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import Social from '../Social/Social';
 import './Login.css'
 import auth from '../../../firebase.init';
-import { async } from '@firebase/util';
 
 const Login = () =>{
-    const [email, setEmail] = useState();
+    const [email, setEmail] = useState('');
+    const [errorMassage, setErrorMassage] = useState('');
     const emailRef = useRef();
     const passwordRef = useRef();
     const navigate = useNavigate();
 
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail, sending,] = useSendPasswordResetEmail(auth);
-
+    const [sendPasswordResetEmail, sending, error1 ] = useSendPasswordResetEmail(auth);
 
     const handleSign = event => {
         event.preventDefault();
@@ -25,14 +24,20 @@ const Login = () =>{
     const handleEmailBlur = event => {
         setEmail(event.target.value)
     }
+
     const handleReset = async() => {
         await sendPasswordResetEmail(email)
     }
 
+   
     if (user) {
         navigate("/home")
     }
-
+    
+    if (sending) {
+        return <h1 className='sending d-flex justify-content-center align-items-center
+        w-100'>Sending...</h1>;
+      }
 
     return (
         <div className="container text-center login-container">

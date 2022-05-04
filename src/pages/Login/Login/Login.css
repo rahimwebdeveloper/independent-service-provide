@@ -18,6 +18,7 @@
 .reset{
     color: red;
     cursor: pointer;
+    
 }
 .form-button{
     border: none;
@@ -26,4 +27,8 @@
     color: white;
     font-weight: 700;
 
+}
+
+.sending{
+    height: 400px;
 }
