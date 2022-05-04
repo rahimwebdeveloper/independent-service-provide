@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import useCreateUserWithEmailAndPassword from 'react-firebase-hooks'
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Social from '../Social/Social';
 import auth from '../../../firebase.init';
 
@@ -9,7 +9,7 @@ const Register = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
 
-    const [createUserWithEmailAndPassword, user,] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
 
     const handleCreateUser = event => {
         event.preventDefault();
@@ -28,6 +28,7 @@ const Register = () => {
                 <input ref={passwordRef} type="password" name="password" id="" placeholder="Password" required />
                 <input className="form-button" type="submit" value="Register" />
             </form>
+            <p style={{color: "red"}}>{error?.message}</p>
             <p className="">Already have an Account ? <Link to="/login">Login</Link></p>
             <Social></Social>
         </div>
